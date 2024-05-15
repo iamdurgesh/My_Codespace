@@ -473,9 +473,104 @@ except IndexError:
     
 except SyntaxError:
     print("Invalid syntax")"""
+    
+# 26. ***Using Finally in error Handling  (it will always execute even after returning inside try or except)
+
+"""try:
+    l = [1,33,55,67]
+    i = int(input("Enter the index: "))
+    print(l[i])
+except:
+    print("Some error has occured")
+
+finally:
+    print("this will always execute")
+"""
+"""def func():     # When even called in a function, finally will always execute even if except or try have returnd the value before
+    try:                                
+        l = [1,33,55,67]
+        i = int(input("Enter the index: "))
+        print(l[i])
+        return 1
+    except:
+        print("Some error has occured")
+        return 0
+
+    finally:
+         print("this will always execute")
+
+x = func()
+print(x)"""
+
+# 26. Raising custom errors 
+
+"""a = int(input("Entera any value between 1 and 100: "))
+
+if (a<1 or a>100):
+    raise ValueError("Bc value limit mein daal na")
+
+print(a)"""
+
+# an object which should only accept "quit"as an input
+"""a = str(input("Enter the correct string: "))
+
+if (a != "quit"):
+    raise ValueError("Incorrect string typed")
+
+print(f"the value entered is matching with {a}")"""
+    
+# 27: Exercise (Secret Code Language)
 
 
 
+
+
+
+
+# 28. Shorthand for if-else
+
+"""a = 100000
+b = 10000
+print("A") if a > b else print("Gleichnummern") if a== b else print("B") #Shorthand"""
+
+# zb.2
+"""c = 9 if a > b else 0
+print(c)"""
+
+# zb:3
+"""result = value_if_true if condition else value_if__false
+# is equivalent to 
+if condition:
+    result = value_if_true
+else:
+    result = value_if__false"""
+    
+# 29: Enumerate function:      used to loop over a sequence
+
+"""marks = [22,33,44,23,75,55,7,99]
+index = 0
+for mark in marks:
+    print(mark)
+    if(index == 4):
+        print("index without enumerate")
+    index +=1"""
+    
+    #1 Solution
+"""marks = [22,33,44,23,75,55,7,99]
+
+for index, mark in enumerate(marks):   # returns a tuple
+    print(mark)
+    if(index == 4):
+        print("index without enumerate")"""
+
+
+    #2 solution
+"""colors = ["black", "green", "blue", "orange"]
+
+for index, color in enumerate(colors, start = 1):
+    print(colors)
+    if(index == 2):
+        print("Mango juice")"""
 
 
 
