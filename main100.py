@@ -573,6 +573,32 @@ for index, color in enumerate(colors, start = 1):
         print("Mango juice")"""
 
 
+#30 
+
+# 31  Learn how to import
+
+# import testfunc;
+
+# testfunc.welcome()
+
+# # OS module in python (used to perform actions, or automate file actions)
+
+# import os
+# os.mkdir("data")
+
+# # if(not os.path.exists("data")):
+# #     os.mkdir("data")
+# for i in range(0,100):
+#     # os.mkdir(f"data/testFolder{i+1}")
+#     os.rename(f"data/testFolder{i+1}", f"data/folderRenamed {i+1}")     # rename method
+#     os.remove(f"data/folderRenamed {i+1}")     # remove method
+
+# # to remove a file
+# # os.remove("test.py")
+    
+    
+
+
 
 
 
