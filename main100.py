@@ -602,19 +602,85 @@ for index, color in enumerate(colors, start = 1):
 
 # # OS module in python (used to perform actions, or automate file actions)
 
-# import os
-# os.mkdir("data")
+"""import os
+os.mkdir("data")
 
-# # if(not os.path.exists("data")):
-# #     os.mkdir("data")
-# for i in range(0,100):
-#     # os.mkdir(f"data/testFolder{i+1}")
-#     os.rename(f"data/testFolder{i+1}", f"data/folderRenamed {i+1}")     # rename method
-#     os.remove(f"data/folderRenamed {i+1}")     # remove method
+# if(not os.path.exists("data")):
+#     os.mkdir("data")
+for i in range(0,100):
+    # os.mkdir(f"data/testFolder{i+1}")
+    os.rename(f"data/testFolder{i+1}", f"data/folderRenamed {i+1}")     # rename method
+    os.remove(f"data/folderRenamed {i+1}")     # remove method
 
-# # to remove a file
-# # os.remove("test.py")
+# to remove a file
+# os.remove("test.py")"""
+
+
+#32  Local vs Global Variables
+"""x = 10 # global variable
+
+def a_function():
+    global x        #using global inside leads to unexpected behaviour and harder to debug
+    x = 100
+    y = 5
+    print(y)
     
+a_function()
+print(x) """
+
+
+
+# 33 File IO / File handling
+"""f = open('myFile2.txt', 'w')  # to write in a file use this, also if not exists already it will create a new file
+f = open('test_file.txt', 'x')   # to create a new file
+f = open('myFile.txt', 'w')   # while using write, it will write on the file, it will remove all the preivous data if the file name is same
+f = open('myFile.txt', 'a')   # while using write, it will append on the file, it will not remove all the preivous data if the file name is same
+print(f)
+text = f.write('Heya, now the append should add the this text in the file')
+f.close()
+print(text)
+
+with open('file_a.txt', 'w') as f :
+    f.write(f"this file is generated using a code snippet where we don't have to close it \n")"""
+    
+# 34 read(), readlines(), writelines() and other methods
+f = open('file_a.txt', 'r')
+i = 0
+while True:
+    i = i + 1
+    line = f.readline()
+    if not line:
+     break
+    m1 = line.split(",")[0]
+    m2 = line.split(",")[1]
+    m3 = line.split(",")[2]
+    print(f" Marks of student {i} in maths are: {m1}")
+    print(f" Marks of student {i} in maths are: {m2}")
+    print(f" Marks of student {i} in maths are: {m3}")
+
+    print(line)
+
+#35 Seek(), tell(), and other functions
+
+#36 Lambda functions
+
+#37 Map, Filter, and Reduce in Python
+
+#38 "is" vs "==" 
+
+#39 Exercise 5 Snake Water Gun
+
+#40 OOPS in Python    
+
+#41 Classes and Objects
+
+#42 Constructors in python
+
+#43 Decorators in Python
+
+#44 Getters and Setters in python
+
+#45 Inheritance in Python
     
 
 
