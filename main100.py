@@ -644,21 +644,29 @@ with open('file_a.txt', 'w') as f :
     f.write(f"this file is generated using a code snippet where we don't have to close it \n")"""
     
 # 34 read(), readlines(), writelines() and other methods
-f = open('file_a.txt', 'r')
+# 1A. also update the file_a.txt to the marks values 
+"""f = open('file_a.txt', 'r')
 i = 0
 while True:
     i = i + 1
     line = f.readline()
     if not line:
      break
-    m1 = line.split(",")[0]
+    m1 = int(line.split(",")[0])
     m2 = line.split(",")[1]
     m3 = line.split(",")[2]
-    print(f" Marks of student {i} in maths are: {m1}")
-    print(f" Marks of student {i} in maths are: {m2}")
-    print(f" Marks of student {i} in maths are: {m3}")
+    print(f" Marks of student {i} in maths are: {m1 *2}")
+    print(f" Marks of student {i} in maths are: {m2 *2}")
+    print(f" Marks of student {i} in maths are: {m3 *2}")
 
-    print(line)
+    print(type(line))"""
+    
+# B.
+f = open('file_a.txt','w')
+lines = ['line1\n','line2\n','line3\n']
+f.writelines(lines)
+f.close()
+
 
 #35 Seek(), tell(), and other functions
 
