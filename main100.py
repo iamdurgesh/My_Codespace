@@ -688,6 +688,24 @@ with open('sample_file.txt', 'r') as f:
     print(f.read())"""
     
 #36 Lambda functions
+"""# def double(x):
+#     return x*2
+
+double = lambda x: x*2
+print(double(6))
+cube = lambda x: x*x*x
+print(cube(3))
+avg = lambda x,y,z: (x+y+z)/3
+print(avg(3,5,7))
+m2cm = lambda x: x*100
+print(f"value of meter to cm is {m2cm(4)} centimeters")
+
+def useCase(fx, value):
+    return 100 + fx(value)
+# It is mostly used when want to pass a function as an argument
+print(useCase(cube, 4))"""
+
+
 
 #37 Map, Filter, and Reduce in Python
 
