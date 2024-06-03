@@ -669,13 +669,23 @@ f.close()"""
 
 
 #35 Seek(), tell(), and other functions
-#used to
+#35 a.
+"""#used to
 with open('myFile.txt', 'r') as f:
     print(type(f))
     f.seek(10)        # to move to the 10th byte in the file
-    #read the next 5 BYTES
-    data = f.read(5)
-    print(data)
+
+    print(f.tell())   #To see the current position
+    data = f.read(5)        #read the next 5 BYTES
+    print(data)"""
+
+#35 b.    
+"""with open('sample_file.txt', 'w') as f:
+    f.write('Hello World 51!!')
+    f.truncate(10)      # To trucate the file to a specific size    
+
+with open('sample_file.txt', 'r') as f:
+    print(f.read())"""
     
 #36 Lambda functions
 
