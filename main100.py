@@ -662,14 +662,21 @@ while True:
     print(type(line))"""
     
 # B.
-f = open('file_a.txt','w')
+"""f = open('file_a.txt','w')
 lines = ['line1\n','line2\n','line3\n']
 f.writelines(lines)
-f.close()
+f.close()"""
 
 
 #35 Seek(), tell(), and other functions
-
+#used to
+with open('myFile.txt', 'r') as f:
+    print(type(f))
+    f.seek(10)        # to move to the 10th byte in the file
+    #read the next 5 BYTES
+    data = f.read(5)
+    print(data)
+    
 #36 Lambda functions
 
 #37 Map, Filter, and Reduce in Python
