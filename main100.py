@@ -688,10 +688,71 @@ with open('sample_file.txt', 'r') as f:
     print(f.read())"""
     
 #36 Lambda functions
+"""# def double(x):
+#     return x*2
+
+double = lambda x: x*2
+print(double(6))
+cube = lambda x: x*x*x
+print(cube(3))
+avg = lambda x,y,z: (x+y+z)/3
+print(avg(3,5,7))
+m2cm = lambda x: x*100
+print(f"value of meter to cm is {m2cm(4)} centimeters")
+
+def useCase(fx, value):
+    return 100 + fx(value)
+# It is mostly used when want to pass a function as an argument
+print(useCase(cube, 4))"""
+
+
 
 #37 Map, Filter, and Reduce in Python
+#a. Map
+"""def cube(x):
+    return x*x*x
+print(cube(2))
+l = [1,2,3,4,5]
+newl = []
+# for item in l:
+#     newl.append(cube(item))
+# newl = list(map(cube,l))  #instead of using a for loop we can use a map function and also a lambda instead of a cube function
+newl = list(map(lambda x:x*x*x, l))
+print(newl)
+
+
+#b. ----- Filter
+# def filter_function(a):
+#     return a>2
+# newnewl = list(filter(filter_function, l))
+newnewl = list(filter(lambda x:x>2,l))   # similarly here also we use a lambda function instead of the filter_function defined.
+print(newnewl)"""
+
+#c. Reduce (Ex: Reducing the sum of numbers)
+"""from functools import reduce
+numbers = [5,5,5,5,10,20,30]
+number1 = [1,2,3,4,5]
+#calculating using the reduce function
+sum = reduce(lambda x, y: x + y, numbers)
+product = reduce(lambda x, y: x*y, number1)
+
+print(product)
+print(sum)"""
 
 #38 "is" vs "==" 
+# 'is' compares the exact location of object in the memory, while '==' compares the value
+"""a = 100     # Constant are saved as a single object, so python will store both a & b in a single memory location 
+b = 100
+c = [12,23]     # List are mutable, so they will be stored at individual memory location
+d = [12,23]
+e = ("iphone","macbook")  #immutable tupple, so must be true
+f = ("iphone", "macbook")
+print(a is b)
+print(a == b)
+print(c is d)
+print(c == d)
+print(e is f)
+print(e == f)"""
 
 #39 Exercise 5 Snake Water Gun
 
