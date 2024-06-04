@@ -708,6 +708,17 @@ print(useCase(cube, 4))"""
 
 
 #37 Map, Filter, and Reduce in Python
+#a. Map
+def cube(x):
+    return x*x*x
+print(cube(2))
+l = [1,2,3,4,5]
+newl = []
+# for item in l:
+#     newl.append(cube(item))
+# newl = list(map(cube,l))  #instead of using a for loop we can use a map function and also a lambda instead of a cube function
+newl = list(map(lambda x:x*x*x, l))
+print(newl)
 
 #38 "is" vs "==" 
 
