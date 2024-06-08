@@ -769,6 +769,32 @@ print(c == d)
 print(e is f)
 print(e == f)"""
 
+"""a = 100     # Constant are saved as a single object, so python will store both a & b in a single memory location 
+b = 100
+c = [12,23]     # List are mutable, so they will be stored at individual memory location
+d = [12,23]
+e = ("iphone","macbook")  #immutable tupple, so must be true
+f = ("iphone", "macbook")
+print(a is b)
+print(a == b)
+print(c is d)
+print(c == d)
+print(e is f)
+print(e == f)"""
+
+"""a = 100     # Constant are saved as a single object, so python will store both a & b in a single memory location 
+b = 100
+c = [12,23]     # List are mutable, so they will be stored at individual memory location
+d = [12,23]
+e = ("iphone","macbook")  #immutable tupple, so must be true
+f = ("iphone", "macbook")
+print(a is b)
+print(a == b)
+print(c is d)
+print(c == d)
+print(e is f)
+print(e == f)"""
+
 
 #40 OOPS in Python    
 
