@@ -759,16 +759,66 @@ print(e == f)"""
 
 #40 OOPS in Python    
 # It consistes of classes(blueprint or template for creating objects) and objects(instance of a class, has its own data and methods) 
-
+#   
 #41 Classes and Objects
+"""class Person:
+    name = "Henrick"
+    occupation = "Developer"
+    networth = 10
+    def info(self):   #try to use "self" when defining a function in a class
+        print(f"{self.name} is a {self.occupation}")
+        
+
+# Here we can use the class multiple times 
+a = Person()
+a.info()
+b = Person()
+b.name = "Ronnie"
+b.occupation = "Designer"
+b.info()
+
+c = Person()
+c.name = "Mascha"
+c.occupation = "Archeologist"
+c.networth = str("100 Millions")
+print(f"{c.name} is a {c.occupation} and has {c.networth}")"""
 
 #42 Constructors in python
+"""# it is a special method in a class to initialize an object of a class, gets called automatically when an object is created in a class, it returns none
+
+class Person:
+    # def __init__(self):           # Default Constructor
+    #     print("Hey a constructor is initialised")
+    
+    def __init__(self, naam, kaam): # Parameterized Constructor
+        print("Hey Your constructor is passed")
+        self.name = naam  
+        self.occupation = kaam   
+        
+
+    def info(self):
+        print(f"{self.name} is a {self.occupation}")
+
+a = Person("Ronnie", "Artist")
+b = Person("Rishi", "Designer")
+# a.name = "Disha"
+# a.occupation = "Wholeseller"
+a.info()
+b.info()"""
 
 #43 Decorators in Python
 
 #44 Getters and Setters in python
 
 #45 Inheritance in Python
+
+#46 Access Modifiers in Python
+
+#47 Exercise 6 Library Management System
+
+#48 Static Methods in Python
+
+#49 Instance Variables vs Class Variables
     
 
 
