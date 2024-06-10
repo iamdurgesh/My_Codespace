@@ -888,7 +888,7 @@ obj.show()"""
 
 #45 Inheritance in Python
 
-import math
+"""import math
 class Employee:
     def __init__(self, name, id):
         self.name = name
@@ -906,11 +906,49 @@ e1 = Employee("Rohan Das", 400)
 e1.showDetails()
 e2 = Programmer("Raamu", 123)
 e2.showDetails()
-e2.showLanguage()
+e2.showLanguage()"""
         
 
 
 #46 Access Modifiers in Python
+"""# How Public private and protected  work in python, to limit the access. All self modifiers are public by default
+#There is no primary concept of public private and protected in python
+class Employee:
+    def __init__(self):
+        self.__name = "Harry" # "__" double underscore before the modiefier makes it private
+
+a = Employee()
+# print(a.__name)               #Cannot be acessed directly
+print(a._Employee__name)        #can be accessed indirectly  using name mangling
+print(dir(Employee))
+
+
+# Name Mangling : we use it to protect class-private and subclass-private attributes from being overwritten by subclasses
+
+#EX-2
+class Student:
+    def __init__(self):
+        self._name = "Donnie"
+
+    def _funName(self):
+        return "CodeWithDonnie"
+class Subject(Student):  #inherited class
+    def sub(self):
+        return "Mathematik"
+    pass
+
+obj = Student()
+obj1 = Subject()
+print(dir(obj))  # to check the _varName in the directory
+# calling by object of student class
+print(obj._name)
+print(obj._funName())   # Single underscore is mostly for naming convention
+# Calling by object of the subject class
+
+print(obj1._name)
+print(obj1._funName())
+print(obj1.sub())"""
+
 
 #47 Exercise 6 Library Management System
 
