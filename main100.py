@@ -807,10 +807,108 @@ a.info()
 b.info()"""
 
 #43 Decorators in Python
+#They are used to modify functions(decorator fuction takes another function as an argument(nested function))
 
+"""def greet(fx):
+    def mfx():
+       print("Greet function is called") 
+       fx()
+       print("Thanks for using this greet function")
+    return mfx
+
+# def Hello():                          
+#     print("Hello Worldie")
+    
+# greet(Hello)()        # here if we don't use the decorator, we call the function, less readability
+
+@greet
+def Hello():
+    print("Greeting for the World")
+
+Hello()                 # Better Readability"""
+    
+# b
+"""def decorator(fx):           
+    def mfx(*args, **kwargs):
+        print("Greet function is called") 
+        fx(*args, **kwargs)
+        print("Thanks for using this greet function")
+    return mfx
+
+def add(a, b):
+    print(a+b)
+    
+@decorator
+def Hello():
+    print("Greeting for the World")
+
+Hello()   
+decorator(add)(1,4)"""
+
+# Logging Module
+"""import logging
+def log_function__call(func):
+    def decorated(*args, **kwargs):
+        logging.info(f"Calling {func.__name__} with args = {args}, kwargs = {kwargs}")
+        result = func(*args, **kwargs)
+        logging.info(f"{func.__name__} returned{result}")
+        return result
+    return decorated
+
+@log_function__call
+def my_function(a,b):
+    return a + b
+    """
+    
 #44 Getters and Setters in python
+"""class MyClass:
+    def __init__(self, value):
+        self._value = value
+        
+    def show(self):
+        print(f"Value is {self._value}")
+        
+    # @property       #Works as a getter, looks like a property, but is a method(encapsulation)
+    # def value(self):
+    #     return 10* self._value
+    
+    @property     
+    def ten_value(self):
+        return 10* self._value
+    
+    @ten_value.setter
+    def ten_value(self, new_value):
+        self._value = new_value/10
+    
+obj = MyClass(10)
+obj.ten_value = 20
+print(obj._value)
+print(obj.ten_value)
+obj.show()"""
 
 #45 Inheritance in Python
+
+import math
+class Employee:
+    def __init__(self, name, id):
+        self.name = name
+        self.id = id
+
+    def showDetails(self):
+         print(f"The name of the employee: Id = {self.id} is {self.name}")
+         
+class Programmer(Employee):      # it will inherit all the properties of class Employee
+    def showLanguage(self):
+        print("The default language is Python")
+        
+        
+e1 = Employee("Rohan Das", 400)
+e1.showDetails()
+e2 = Programmer("Raamu", 123)
+e2.showDetails()
+e2.showLanguage()
+        
+
 
 #46 Access Modifiers in Python
 
