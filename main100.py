@@ -946,56 +946,33 @@ print(obj._funName())   # Single underscore is mostly for naming convention
 print(obj1._name)
 print(obj1._funName())
 print(obj1.sub())"""
-#EX-2
-class Student:
-    def __init__(self):
-        self._name = "Donnie"
-
-    def _funName(self):
-        return "CodeWithDonnie"
-class Subject(Student):  #inherited class
-    def sub(self):
-        return "Mathematik"
-    pass
-
-obj = Student()
-obj1 = Subject()
-print(dir(obj))  # to check the _varName in the directory
-# calling by object of student class
-print(obj._name)
-print(obj._funName())   # Single underscore is mostly for naming convention
-# Calling by object of the subject class
-
-print(obj1._name)
-print(obj1._funName())
-#EX-2
-class Student:
-    def __init__(self):
-        self._name = "Donnie"
-
-    def _funName(self):
-        return "CodeWithDonnie"
-class Subject(Student):  #inherited class
-    def sub(self):
-        return "Mathematik"
-    pass
-
-obj = Student()
-obj1 = Subject()
-print(dir(obj))  # to check the _varName in the directory
-# calling by object of student class
-print(obj._name)
-print(obj._funName())   # Single underscore is mostly for naming convention
-# Calling by object of the subject class
-
-print(obj1._name)
-print(obj1._funName())
-
 
 #47 Exercise 6 Library Management System
+# Write a library class with no_of_books and books  as two instance variables, write a program to create 
 
 #48 Static Methods in Python
+#These methods neither belong to a instance nor class
 
+"""class Math:
+    def __init__(self, num):
+        self.num = num
+        
+    def addtoNum(self, n):
+        self.num = self.num + n
+    
+    @staticmethod
+    def add(a, b):
+        return a + b   
+    
+result = Math.add(1, 2)
+print(result)
+
+a = Math(5)
+print(a.num)
+a.addtoNum(76)
+print(a.num)
+
+print(Math.add(77,2))"""
 #49 Instance Variables vs Class Variables
     
 
