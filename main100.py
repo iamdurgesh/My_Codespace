@@ -907,8 +907,6 @@ e1.showDetails()
 e2 = Programmer("Raamu", 123)
 e2.showDetails()
 e2.showLanguage()"""
-        
-
 
 #46 Access Modifiers in Python
 """# How Public private and protected  work in python, to limit the access. All self modifiers are public by default
@@ -948,6 +946,50 @@ print(obj._funName())   # Single underscore is mostly for naming convention
 print(obj1._name)
 print(obj1._funName())
 print(obj1.sub())"""
+#EX-2
+class Student:
+    def __init__(self):
+        self._name = "Donnie"
+
+    def _funName(self):
+        return "CodeWithDonnie"
+class Subject(Student):  #inherited class
+    def sub(self):
+        return "Mathematik"
+    pass
+
+obj = Student()
+obj1 = Subject()
+print(dir(obj))  # to check the _varName in the directory
+# calling by object of student class
+print(obj._name)
+print(obj._funName())   # Single underscore is mostly for naming convention
+# Calling by object of the subject class
+
+print(obj1._name)
+print(obj1._funName())
+#EX-2
+class Student:
+    def __init__(self):
+        self._name = "Donnie"
+
+    def _funName(self):
+        return "CodeWithDonnie"
+class Subject(Student):  #inherited class
+    def sub(self):
+        return "Mathematik"
+    pass
+
+obj = Student()
+obj1 = Subject()
+print(dir(obj))  # to check the _varName in the directory
+# calling by object of student class
+print(obj._name)
+print(obj._funName())   # Single underscore is mostly for naming convention
+# Calling by object of the subject class
+
+print(obj1._name)
+print(obj1._funName())
 
 
 #47 Exercise 6 Library Management System
