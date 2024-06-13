@@ -973,7 +973,25 @@ a.addtoNum(76)
 print(a.num)
 
 print(Math.add(77,2))"""
+
 #49 Instance Variables vs Class Variables
+
+class Employee:
+    companyName ="Apple"            # Class Variable(same for the whole class)
+    # noOfEmployees = 0
+    def __init__(self, name):
+        self.name = name
+        self.raise_amount = 5000
+        # Employee.noOfEmployees +=1
+        
+    def showDetails(self):
+        print(f"The Name of the Employee is {self.name}, and the raise amount is {self.raise_amount}")
+        
+        
+
+emp1 = Employee("Horny")
+Employee.showDetails(emp1)
+emp1.showDetails()
     
 
 
