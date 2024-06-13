@@ -975,7 +975,7 @@ print(a.num)
 print(Math.add(77,2))"""
 
 #49 Instance Variables vs Class Variables
-# Understand each and every step..
+"""# Understand each and every step..
 class Employee:
     companyName ="Apple"            # Class Variable(same for the whole class)
     noOfEmployees = 10
@@ -998,7 +998,7 @@ emp1.showDetails()
 
 emp2 = Employee("Amanda")      
 emp2.raise_amount = 0.3
-emp2.showDetails()
+emp2.showDetails()"""
 
 
 
