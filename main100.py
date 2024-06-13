@@ -1001,10 +1001,44 @@ emp2.raise_amount = 0.3
 emp2.showDetails()"""
 
 
+#Exercise 7 
+#Write a program to clear the clutter inside a folder on your computer. You should use the os module to rename all te png images from 1.png,, all the way till n.png where n is the numner of png files in that folder. Do the same for other file formats.For Example:
 
 
+#50 Class Methods
+
+"""class Employee:
+    company = "Apple"
+    def show(self):
+        print(f"The name is {self.name} and company name is {self.company}")
+    
+    @classmethod   #print once before and after commenting this
+    #Using the above method the 1st argument in "cls" below will be a taken as a class instead of an instance
+    def changeCompany(cls, newCompany):
+        cls.company = newCompany
+        
+    
+    
+e1 = Employee()
+e1.name = "Raamu"
+e1.company = "Panasonic"
+print((e1.company))
+e1.show()
+e1.changeCompany("TATA")
+e1.show()
+print(Employee.company)         # The result was Apple, not TATA, because the class was not updated without using the classDecorator
+"""
 
 
+#51 Class Methods as Alternative Constructors
+
+#52 dir, _dict_ and help method in python
+
+#53 Super Keyword in Python 
+
+#54 Magic Dunder Method in Python 
+
+#55 Method Overriding in Python 
 
 
 
