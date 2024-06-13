@@ -975,24 +975,31 @@ print(a.num)
 print(Math.add(77,2))"""
 
 #49 Instance Variables vs Class Variables
-
+"""# Understand each and every step..
 class Employee:
     companyName ="Apple"            # Class Variable(same for the whole class)
-    # noOfEmployees = 0
+    noOfEmployees = 10
     def __init__(self, name):
         self.name = name
         self.raise_amount = 5000
-        # Employee.noOfEmployees +=1
+        Employee.noOfEmployees +=5
         
     def showDetails(self):
-        print(f"The Name of the Employee is {self.name}, and the raise amount is {self.raise_amount}")
+        print(f"The Name of the Employee is {self.name}, and the raise amount is {self.raise_amount} and he works in {self.companyName}, whose company size is {self.noOfEmployees}")
         
         
 
-emp1 = Employee("Horny")
-Employee.showDetails(emp1)
-emp1.showDetails()
-    
+emp1 = Employee("Ronnie")
+Employee.showDetails(emp1)           #INSTEAD OF CALLING LIKE THIS
+# emp1.showDetails()                  # We can do this
+emp1.companyName = "Alstom"
+print(emp1.companyName)             # if there is an instance variable present, then it will use it, otherwise the class variable will be shown
+emp1.showDetails()   
+
+emp2 = Employee("Amanda")      
+emp2.raise_amount = 0.3
+emp2.showDetails()"""
+
 
 
 
