@@ -1158,18 +1158,18 @@ class Employee:
     def __str__(self):
         return f"This name of the employee is {self.name} str"
 
-    # def __repr__(self):
-    #     return f"The name of the employee is {self.name} repr"
+    def __repr__(self):
+        return f"The name of the employee is {self.name} repr"
     
-    def __call__():
-         a= str(input("What is your name"))
-         return a
+    def __call__(self):
+        a = str(input("What is your name:"))
+        
     
 e = Employee("Donald")
 print(e)
 print(str(e))
 print(repr(e))
-print
+e()
 
 
 # print(e.name)
