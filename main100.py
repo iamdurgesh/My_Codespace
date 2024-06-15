@@ -1142,10 +1142,40 @@ print(a1.name)
 print(a2.name)
 print(a2.id)
 print(a2.lang)"""
+
+#54 Magic Dunder Method in Python (special methods, we can define in our classes, they give powerful way to manipulate objects with their behaviour)
+
+class Employee:
+    def __init__(self,name):
+        self.name = name    
+        
+    def __len__(self):
+        i = 0
+        for c in self.name:
+            i+=1
+        return i
+
+    def __str__(self):
+        return f"This name of the employee is {self.name} str"
+
+    # def __repr__(self):
+    #     return f"The name of the employee is {self.name} repr"
     
+    def __call__():
+         a= str(input("What is your name"))
+         return a
+    
+e = Employee("Donald")
+print(e)
+print(str(e))
+print(repr(e))
+print
 
 
-#54 Magic Dunder Method in Python 
+# print(e.name)
+# print(len(e))
+
+
 
 #55 Method Overriding in Python 
 
