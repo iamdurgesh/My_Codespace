@@ -1032,6 +1032,44 @@ print(Employee.company)         # The result was Apple, not TATA, because the cl
 
 #51 Class Methods as Alternative Constructors
 
+# Example 1
+"""class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+        
+    @classmethod
+    def fromstr(cls, string):
+        return cls(string.split("_")[0],int(string.split("_")[1]))  #Using class method as an alternative constructor
+        
+e1 = Employee("Jamun", 2100)     #Instance
+print(e1.name, e1.salary)
+
+string = "Harry_12000"
+# e2 = Employee(a.split("-")[0],a.split("-")[1]) #Instead of using this for each instance, we can make a classmethod, return the string with the parameters
+# print(e2.name)
+# print(e2.salary)
+
+
+e2 = Employee.fromstr(string)           # we use the the class as a constructor here
+print(e2.name)
+print(e2.salary)"""
+
+#-----Example2
+"""class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+    @classmethod
+    def fromstring(cls, string):
+        name, age = string.split(", ")
+        return cls(name, int(age))
+
+person = Person.fromstring("Namanda, 69")
+print(person.name, person.age)
+    """
+    
 #52 dir, _dict_ and help method in python
 
 #53 Super Keyword in Python 
