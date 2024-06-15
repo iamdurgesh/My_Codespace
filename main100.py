@@ -1072,12 +1072,86 @@ print(person.name, person.age)
     
 #52 dir, _dict_ and help method in python
 
+
+#a. dir method:  They are used for object intro-spection, to check how classes resolve various functions and executes code
+
+"""x = [1,2,3,4]
+y = (23,15,55)
+print(dir(x))
+print(len(dir(x)))
+print(len(dir(y)))
+
+print(x.__init__)
+# print(x.__dict__)
+
+#b. __dict method
+
+class Person:
+    def __init__(self, team, color, points):
+        self.team = team
+        self.color = color
+        self.points = 12
+        
+p = Person("Bayern", "Red", 23)
+print(p.__dict__)
+
+#c help method : it will give all the details for an object, including its attributes and methods
+print(help(Person))"""
+        
 #53 Super Keyword in Python 
+
+# Used to call/refer parent methods/class from child class
+"""class ParentClass:
+    def parent_method(self):
+        print("This is the parent method.")
+
+        
+class ChildClass(ParentClass):
+    def parent_method(self):
+        print("Parent Method in child class")
+        super().parent_method()     # This will also call the parent method from the parent class
+    def child_method(self):
+        print("This is a child method.")
+        super().parent_method()
+
+child_object = ChildClass()
+child_object.child_method()
+child_object.parent_method()"""
+
+#Ex.2
+"""class Employee:
+    def __init__(self, name, id):
+        self.name = name
+        self.id = id
+        
+# class Programmer:
+#     def __init__(self, name, id, lang):
+#         self.name = name
+#         self.id = id
+#         self.lang = lang      
+
+# Use superkeyword instead
+class Programmer(Employee):
+    def __init__(self, name, id, lang):
+        super().__init__(name, id)
+        self.lang = lang
+        
+a1 = Employee("Tony", 443)
+a2 = Programmer("Ronnie", 576, "typescript")
+print(a1.name)
+print(a2.name)
+print(a2.id)
+print(a2.lang)"""
+    
+
 
 #54 Magic Dunder Method in Python 
 
 #55 Method Overriding in Python 
 
+#56 Operator Overloading in Python
+
+#57
 
 
 
