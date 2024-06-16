@@ -1383,15 +1383,29 @@ for name in names:
 names()"""
     
 #61 Time Module in Python:
-import time
-# def usingFor():
-#     for i in range 5000:
-#         print(i)
+# import time
+
+"""def usingWhile():
+    i = 0
+    while i<500:
+        i = i+1
+        print(i)
+        
+def usingFor():
+    for i in range(500):
+        print(i)
+
+init = time.time()
+usingFor()
+print(time.time()-init)
+usingWhile()
+print(time.time() - init)"""
 
 
-print(2)
+"""print(2)
 t = time.localtime()
-print(t)
+formatted_time = time.strftime("%Y-%m-%d %H-%M-%S", t)
+print(formatted_time)"""
 
 
 #62 Creating a commandLine utility in Python:
