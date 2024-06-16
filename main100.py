@@ -1268,17 +1268,31 @@ c = Cat("Pussy", "Johnny")
 c.makesound()"""
         
 #58 Multiple Inheritance in Python 
-
-class Employee:
+# Here we inherit properties/methods from multiple or two class 
+"""class Employee:
     def __init__(self, name):
         self.name = name
+    def edetails(self):
+        print(f"The name of the Employee is {self.name}")
         
 class Dancer:
     def __init__(self, dance):
+        self.dance = dance
+    def ddetails(self):
+        print(f"The name of the dance is {self.dance}")
         
 
 class DancerEmployee(Employee, Dancer):
-    pass
+    def __init__(self, dance, name):
+        self.dance = dance
+        self.name = name
+
+o = DancerEmployee("Bachatta", "Shawty")
+print(o.name)
+print(o.dance)
+o.ddetails()
+o.edetails()
+print(DancerEmployee.mro())         ## To print the method Resolution Order"""
 
 #59 Multilevel Inheritance in Python:
 
