@@ -1210,10 +1210,39 @@ a = Circle(100)
 print(a.area())"""
 
 #56 Operator Overloading in Python
+"""class Vector:
+    def __init__(self, i, j, k):
+        self.i = i
+        self.j = j
+        self.k = k
+        
+    def __str__(self):
+        return f"{self.i}i + {self.j}j + {self.k}k"
+    
+    # def __add__(self, x):
+    #     return f"{self.i + x.i}i + {self.j + x.j}j + {self.k+x.k}k"
+    # TO Change the type from str to vector
+    def __add__(self, x):
+         return Vector(self.i + x.i,self.j + x.j, self.k+x.k)
+    
+v1 = Vector(3, 6, 3)
+v2 = Vector(3, 3, 3)
+print(v1)
+print(v2)
+print(v1+v2)
+print(type(v1 + v1))"""
 
+#57 Single Inheritance in Python
 
+#58 Multiple Inheritance in Python 
 
-#57
+#59 Multilevel Inheritance in Python:
+
+#60 Hybrid and Hierarchical Inheritance in Python:
+
+#61 Time Module in Python 
+
+#62 Creating a commandLine utility in Python:
 
 
 
