@@ -1145,7 +1145,7 @@ print(a2.lang)"""
 
 #54 Magic Dunder Method in Python (special methods, we can define in our classes, they give powerful way to manipulate objects with their behaviour)
 
-class Employee:
+"""class Employee:
     def __init__(self,name):
         self.name = name    
         
@@ -1162,24 +1162,56 @@ class Employee:
         return f"The name of the employee is {self.name} repr"
     
     def __call__(self):
-        a = str(input("What is your name:"))
+        a = str(input("What is your name: "))
+        return print(f"The name is saved as {a} ")
         
     
 e = Employee("Donald")
 print(e)
 print(str(e))
 print(repr(e))
-e()
-
-
+e()"""
 # print(e.name)
 # print(len(e))
 
+# Further methods are also used for operator overloading like __mul__ ,__add__
 
+#55 Method Overriding in Python :
+# to redefine a parent class method according to the child class
 
-#55 Method Overriding in Python 
+"""class Shape:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        
+    def area(self):
+        return self.x* self.y
+
+# class Circle:
+#     def __init__(self, radius):
+#         self.radius = radius
+        
+#     def area(self):
+#         return 3.14 * self.radius * self.radius
+# Now instead we can also override this method using a super:
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+        super().__init__(radius, radius)
+        
+    def area(self):
+        return 3.14 * super().area()
+    
+rec = Shape(2,4)
+print(rec.area())
+
+a = Circle(100)
+print(a.area())"""
 
 #56 Operator Overloading in Python
+
+
 
 #57
 
