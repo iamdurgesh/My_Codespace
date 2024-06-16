@@ -1267,7 +1267,7 @@ class Cat(Animal):
 c = Cat("Pussy", "Johnny")
 c.makesound()"""
         
-#58 Multiple Inheritance in Python 
+#58 Multiple Inheritance in Python :
 # Here we inherit properties/methods from multiple or two class 
 """class Employee:
     def __init__(self, name):
@@ -1295,6 +1295,38 @@ o.edetails()
 print(DancerEmployee.mro())         ## To print the method Resolution Order"""
 
 #59 Multilevel Inheritance in Python:
+# Here one class is build up on another and allows hierarchy of classes, leading to a mre specialized class, helps reduce code and avoid repeatability
+
+"""class Animal:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+        
+    def show_details(self):
+        print(f"Name is {self.name}")
+        print(f"Species is {self.species}")
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        Animal.__init__(self, name, species="Dog")
+        self.breed = breed
+        
+    def show_details(self):
+        Animal.show_details(self)
+        print(f"Breed of the Dog is: {self.breed}")
+        
+class Bulldog(Dog):
+    def __init__(self, name, color):
+        Dog.__init__(self, name, breed="Bull Dog")
+        self.color = color
+    
+    def show_details(self):
+        Dog.show_details(self)
+        print(f"Color of the Dog is: {self.color}")
+
+o = Bulldog("Tonny", "Purple")
+o.show_details()
+print(Bulldog.mro())"""
 
 #60 Hybrid and Hierarchical Inheritance in Python:
 
