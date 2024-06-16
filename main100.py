@@ -1145,7 +1145,7 @@ print(a2.lang)"""
 
 #54 Magic Dunder Method in Python (special methods, we can define in our classes, they give powerful way to manipulate objects with their behaviour)
 
-class Employee:
+"""class Employee:
     def __init__(self,name):
         self.name = name    
         
@@ -1162,26 +1162,145 @@ class Employee:
         return f"The name of the employee is {self.name} repr"
     
     def __call__(self):
-        a = str(input("What is your name:"))
+        a = str(input("What is your name: "))
+        return print(f"The name is saved as {a} ")
         
     
 e = Employee("Donald")
 print(e)
 print(str(e))
 print(repr(e))
-e()
-
-
+e()"""
 # print(e.name)
 # print(len(e))
 
+# Further methods are also used for operator overloading like __mul__ ,__add__
 
+#55 Method Overriding in Python :
+# to redefine a parent class method according to the child class
 
-#55 Method Overriding in Python 
+"""class Shape:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        
+    def area(self):
+        return self.x* self.y
+
+# class Circle:
+#     def __init__(self, radius):
+#         self.radius = radius
+        
+#     def area(self):
+#         return 3.14 * self.radius * self.radius
+# Now instead we can also override this method using a super:
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+        super().__init__(radius, radius)
+        
+    def area(self):
+        return 3.14 * super().area()
+    
+rec = Shape(2,4)
+print(rec.area())
+
+a = Circle(100)
+print(a.area())"""
 
 #56 Operator Overloading in Python
+"""class Vector:
+    def __init__(self, i, j, k):
+        self.i = i
+        self.j = j
+        self.k = k
+        
+    def __str__(self):
+        return f"{self.i}i + {self.j}j + {self.k}k"
+    
+    # def __add__(self, x):
+    #     return f"{self.i + x.i}i + {self.j + x.j}j + {self.k+x.k}k"
+    # TO Change the type from str to vector
+    def __add__(self, x):
+         return Vector(self.i + x.i,self.j + x.j, self.k+x.k)
+    
+v1 = Vector(3, 6, 3)
+v2 = Vector(3, 3, 3)
+print(v1)
+print(v2)
+print(v1+v2)
+print(type(v1 + v1))"""
 
-#57
+#57 Single Inheritance in Python
+# Here the class inherits properties from a single parent class
+#syntax: class childClass(ParentClass):
+
+"""class Animal:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+        
+    def make_sound(self):
+        print(f"Sound made by the animal")
+
+# class Dog(Animal):
+#     def __init__(self, name, breed):
+#         Animal.__init__(self, name, species = "Dog")
+#         self.breed = breed
+        
+#     def make_sound(self):
+#         print("Bark!!!")
+
+# d = Dog("Tony", "Bulldog")
+# d.make_sound()
+# a = Animal("Bruno", "DobberMan")
+# a.make_sound()
+
+#Ex.2
+class Cat(Animal):
+    def __init__(self, name, owner):
+        Animal.__init__(self, name, species)
+        self.owner = owner
+        super().make_sound()
+        
+c = Cat("Pussy", "Johnny")
+c.makesound()"""
+        
+#58 Multiple Inheritance in Python 
+# Here we inherit properties/methods from multiple or two class 
+"""class Employee:
+    def __init__(self, name):
+        self.name = name
+    def edetails(self):
+        print(f"The name of the Employee is {self.name}")
+        
+class Dancer:
+    def __init__(self, dance):
+        self.dance = dance
+    def ddetails(self):
+        print(f"The name of the dance is {self.dance}")
+        
+
+class DancerEmployee(Employee, Dancer):
+    def __init__(self, dance, name):
+        self.dance = dance
+        self.name = name
+
+o = DancerEmployee("Bachatta", "Shawty")
+print(o.name)
+print(o.dance)
+o.ddetails()
+o.edetails()
+print(DancerEmployee.mro())         ## To print the method Resolution Order"""
+
+#59 Multilevel Inheritance in Python:
+
+#60 Hybrid and Hierarchical Inheritance in Python:
+
+#61 Time Module in Python 
+
+#62 Creating a commandLine utility in Python:
 
 
 
