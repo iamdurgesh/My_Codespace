@@ -1233,8 +1233,52 @@ print(v1+v2)
 print(type(v1 + v1))"""
 
 #57 Single Inheritance in Python
+# Here the class inherits properties from a single parent class
+#syntax: class childClass(ParentClass):
 
+"""class Animal:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+        
+    def make_sound(self):
+        print(f"Sound made by the animal")
+
+# class Dog(Animal):
+#     def __init__(self, name, breed):
+#         Animal.__init__(self, name, species = "Dog")
+#         self.breed = breed
+        
+#     def make_sound(self):
+#         print("Bark!!!")
+
+# d = Dog("Tony", "Bulldog")
+# d.make_sound()
+# a = Animal("Bruno", "DobberMan")
+# a.make_sound()
+
+#Ex.2
+class Cat(Animal):
+    def __init__(self, name, owner):
+        Animal.__init__(self, name, species)
+        self.owner = owner
+        super().make_sound()
+        
+c = Cat("Pussy", "Johnny")
+c.makesound()"""
+        
 #58 Multiple Inheritance in Python 
+
+class Employee:
+    def __init__(self, name):
+        self.name = name
+        
+class Dancer:
+    def __init__(self, dance):
+        
+
+class DancerEmployee(Employee, Dancer):
+    pass
 
 #59 Multilevel Inheritance in Python:
 
