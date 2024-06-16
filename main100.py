@@ -1384,17 +1384,75 @@ names()"""
     
 #61 Time Module in Python:
 import time
-# def usingFor():
-#     for i in range 5000:
-#         print(i)
 
+"""def usingWhile():
+    i = 0
+    while i<500:
+        i = i+1
+        print(i)
+        
+def usingFor():
+    for i in range(500):
+        print(i)
 
-print(2)
+init = time.time()
+usingFor()
+print(time.time()-init)
+usingWhile()
+print(time.time() - init)"""
+
+#To Add time gap
+"""time.sleep(3)
+print("This was print after 3secs")"""
+
+"""print(2)
 t = time.localtime()
-print(t)
+formatted_time = time.strftime("%Y-%m-%d %H-%M-%S", t)
+print(formatted_time)"""
 
 
-#62 Creating a commandLine utility in Python:
+#62 (**Imp) Creating a Command Line utility in Python: 
+# these are the programs that can be run from the terminal or Command line interafce
+
+"""import argparse
+import requests
+
+def download_file(url, local_filename):
+    if local_filename is None:
+         local_filename = url.split('/')[-1]
+    # NOTE the stream=True parameter below
+    with requests.get(url, stream=True) as r:
+        r.raise_for_status()
+        with open(local_filename, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=8192): 
+                # If you have chunk encoded response uncomment if
+                # and set chunk_size parameter to None.
+                #if chunk: 
+                f.write(chunk)
+    return local_filename
+
+parser = argparse.ArgumentParser()
+
+#Add command line arguments
+parser.add_argument("url", help="Url of the file to Download")
+# parser.add_argument("output", help="By which do you want to save your file")
+parser.add_argument("-o", "--output", help="Name of the File",type = str, default = None)        # for optional file naming
+
+# parse the arguments
+args = parser.parse_args()
+
+#Using the arguments in my code
+print(args.url)
+print(args.output, type(args.output))
+download_file(args.url, args.output)"""
+
+# python -u "d:\My_Codespace\main100.py" http://117.236.229.117/images/contact_us.png (Command line script)
+
+#63. Walrus Operator in Python:
+
+
+
+
 
 
 
