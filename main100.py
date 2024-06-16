@@ -1330,7 +1330,7 @@ print(Bulldog.mro())"""
 
 #60 Hybrid and Hierarchical Inheritance in Python:
 
-#A. Hybrid Inheritance 
+"""#A. Hybrid Inheritance : Can be a combination of single or multiple inheritance
 class BaseClass:
     pass
 
@@ -1343,7 +1343,7 @@ class Derived2(BaseClass):
 class Derived3(Derived1, Derived2):
     pass
 
-# B. Hierarchical Inheritance:
+# B. Hierarchical Inheritance: Classes are based on a Hierarchical Order, see the mro output for understanding
 
 class baseClass:
     pass
@@ -1358,9 +1358,40 @@ class D4(D2):
     pass
 
 print(D3.mro())
-print(D4.mro())
+print(D4.mro())"""
+    
+# Exercise-9:
+#Write a program to pronounce list of names using win32 API. If you are given a list l as follows:
+#l = ["Tom", "Pom", "Rom"], the program should pronounce "shoutout to Tom" and so on..
+
+"""# import win32com.client as wincl
+# speaker_number = 1
+# spk = wincl.Dispatch("SAPI.SpVoice")
+# vcs = spk.GetVoices()
+# SVSFlag = 11
+# print(vcs.Item (speaker_number) .GetAttribute ("Name")) # speaker name
+# spk.Voice
+# spk.SetVoice(vcs.Item(speaker_number)) # set voice (see Windows Text-to-Speech settings)
+# spk.Speak("Hello, it works!, I am gonna bang your ass")"""
+
+#Solution
+"""import win32com.client
+speaker = win32com.client.Dispatch("SAPI.SpVoice")
+names = ["Ronnie", "Sam", "Donald"]
+for name in names:
+    speaker.Speak(f"ShotOut for {names}")
+names()"""
     
 #61 Time Module in Python:
+import time
+# def usingFor():
+#     for i in range 5000:
+#         print(i)
+
+
+print(2)
+t = time.localtime()
+print(t)
 
 
 #62 Creating a commandLine utility in Python:
