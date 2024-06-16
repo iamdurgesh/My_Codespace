@@ -1330,7 +1330,38 @@ print(Bulldog.mro())"""
 
 #60 Hybrid and Hierarchical Inheritance in Python:
 
-#61 Time Module in Python 
+#A. Hybrid Inheritance 
+class BaseClass:
+    pass
+
+class Derived1(BaseClass):
+    pass
+
+class Derived2(BaseClass):
+    pass
+
+class Derived3(Derived1, Derived2):
+    pass
+
+# B. Hierarchical Inheritance:
+
+class baseClass:
+    pass
+class D1(baseClass):
+    pass
+class D2(baseClass):
+    pass
+class D3(D1):
+    pass
+
+class D4(D2):
+    pass
+
+print(D3.mro())
+print(D4.mro())
+    
+#61 Time Module in Python:
+
 
 #62 Creating a commandLine utility in Python:
 
