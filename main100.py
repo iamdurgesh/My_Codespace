@@ -1526,7 +1526,27 @@ print(p)
 for link in soup.find_all('a'): # To get all the URLs within a page with <a> TAGS
     print(link.get('href'))"""
     
-#66 Generators in Python
+    
+#EXERCISE 10: News App 
+#Task: Use the NewsAPI and requests module to fetch the daily news related to different topics, newsapi.org
+"""import requests
+url = "https://newsapi.ai/?gad_source=1&gclid=Cj0KCQjwvb-zBhCmARIsAAfUI2vfyDzmZ_TX9bv79NacEop13NDZGkskc5qxCXxyrqPN37hSj_1n2QUaAhsrEALw_wcB"
+r = requests.get(url)
+print(r.text)"""
+
+#66 Generators in Python:
+# Used to generate values on the fly, not like lists. Means it returns a generator object, which stores the information to create the values
+#1. Creating a generator: Using 'yield' statement, it returns the value of a generator and suspends the execution of function until next value is requested
+"""def my_generator():
+    for i in range(20):
+        yield i
+gen = my_generator()
+print(next(gen))    # returns iteration wise, saves memory, for large datasets
+print(next(gen))
+print(next(gen))
+# for j in gen:
+#     print(j)"""
+
 
 
 
