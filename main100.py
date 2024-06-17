@@ -1449,6 +1449,48 @@ download_file(args.url, args.output)"""
 # python -u "d:\My_Codespace\main100.py" http://117.236.229.117/images/contact_us.png (Command line script)
 
 #63. Walrus Operator in Python:
+#It assigns values to variables as part of a larger expression, can be used when you need to use a value multiple times in a loop. but don't want to repeat the calculation
+
+"""# Happy = True
+# print(Happy)
+# print(Happy := False)
+
+# foods = list()
+# while True:
+#     food = input("What food do you like?: ")
+#     if food == "quit":
+#         break
+#     foods.append(food)
+# print(foods())
+
+#After uding the operator
+# foods = list()
+# while (food := input("What food do you like?: ")) !="quit":
+#     foods.append(food)
+    
+#Example 2:
+while (user_input := input("Enter something (or 'quit' to stop): ")) != "quit":
+    print(f"You entered: {user_input}")
+print("Goodbye!")"""
+
+
+#64 Shutil Module in Python
+"""# Used in high level file operations
+import shutil
+import os 
+
+# shutil.copy("main100.py", "main101.py")
+# shutil.copy2("main100.py", "main101.py") #this also preserves more meta-data about the original file
+# shutil.copytree("data", "test_tutorial") # copies all the directories located to source to a new location specified
+# shutil.move("data/folderRenamed 2", "folderRenamed 2") # shutil.move(src, dst), moves the file from src to dst
+# shutil.rmtree("folderRenamed 1")    # shutil.rmtree(path), recursively deletes the directories not files from the path 
+# os.remove("Newname.jpg") # as shutil can't delete the files, only folder using rmtree, use os module for this"""
+
+#65 Request Module in python:
+
+
+#66 Generators in Python
+
 
 
 
