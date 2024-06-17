@@ -1377,13 +1377,13 @@ print(D4.mro())"""
 #Solution
 """import win32com.client
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
-names = ["Ronnie", "Sam", "Donald"]
+names = ["Ronnie", "Sam", "Donald", "Sassy"]
 for name in names:
-    speaker.Speak(f"ShotOut for {names}")
-names()"""
+    speaker.Speak(f"ShotOut for {name}")
+print(name)"""
     
 #61 Time Module in Python:
-import time
+# import time
 
 """def usingWhile():
     i = 0
@@ -1449,6 +1449,141 @@ download_file(args.url, args.output)"""
 # python -u "d:\My_Codespace\main100.py" http://117.236.229.117/images/contact_us.png (Command line script)
 
 #63. Walrus Operator in Python:
+#It assigns values to variables as part of a larger expression, can be used when you need to use a value multiple times in a loop. but don't want to repeat the calculation
+
+"""# Happy = True
+# print(Happy)
+# print(Happy := False)
+
+# foods = list()
+# while True:
+#     food = input("What food do you like?: ")
+#     if food == "quit":
+#         break
+#     foods.append(food)
+# print(foods())
+
+#After uding the operator
+# foods = list()
+# while (food := input("What food do you like?: ")) !="quit":
+#     foods.append(food)
+    
+#Example 2:
+while (user_input := input("Enter something (or 'quit' to stop): ")) != "quit":
+    print(f"You entered: {user_input}")
+print("Goodbye!")"""
+
+
+#64 Shutil Module in Python
+"""# Used in high level file operations
+import shutil
+import os 
+
+# shutil.copy("main100.py", "main101.py")
+# shutil.copy2("main100.py", "main101.py") #this also preserves more meta-data about the original file
+# shutil.copytree("data", "test_tutorial") # copies all the directories located to source to a new location specified
+# shutil.move("data/folderRenamed 2", "folderRenamed 2") # shutil.move(src, dst), moves the file from src to dst
+# shutil.rmtree("folderRenamed 1")    # shutil.rmtree(path), recursively deletes the directories not files from the path 
+# os.remove("Newname.jpg") # as shutil can't delete the files, only folder using rmtree, use os module for this"""
+
+#65 Request Module in python:
+#This library enables to send HTTP request in PYTHON, and enables to interact with APIs and web services
+# import requests   #UNCOMMENT THIS!
+
+"""# Ex.1
+response = requests.get("https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwiiz4_26-KGAxXUQfEDHcBrBMEQPAgJ")
+print(response.text)"""
+
+#Ex.2 ( make a post request and print response)
+"""url = "https://jsonplaceholder.typicode.com/posts"
+data = {
+    "Title": "Post Request",
+    "body" : "this is the body of the post Request",
+    "userId": "2312",
+}
+headers = {
+    'Content-type': 'application/json; charset=UTF-8',
+}
+response = requests.post(url, headers=headers, json=data)
+print(response.text)"""
+
+#Ex.3 
+"""from bs4 import BeautifulSoup
+url = "https://www.volkswagen.co.in/en.html"
+r = requests.get(url)
+# print(r.text)
+soup = BeautifulSoup(r.text, 'html.parser')     # used to parse html templates and get specific content and get all h2 tags
+for heading in soup.find_all("h2"):
+    # print(soup.prettify)
+    print(heading.text)
+    
+a = soup.title
+print(a)
+
+p = soup.p
+print(p)
+
+for link in soup.find_all('a'): # To get all the URLs within a page with <a> TAGS
+    print(link.get('href'))"""
+    
+    
+#EXERCISE 10: News App 
+#Task: Use the NewsAPI and requests module to fetch the daily news related to different topics, newsapi.org
+"""import requests
+url = "https://newsapi.ai/?gad_source=1&gclid=Cj0KCQjwvb-zBhCmARIsAAfUI2vfyDzmZ_TX9bv79NacEop13NDZGkskc5qxCXxyrqPN37hSj_1n2QUaAhsrEALw_wcB"
+r = requests.get(url)
+print(r.text)"""
+
+#66 Generators in Python:
+# Used to generate values on the fly, not like lists. Means it returns a generator object, which stores the information to create the values
+#1. Creating a generator: Using 'yield' statement, it returns the value of a generator and suspends the execution of function until next value is requested
+"""def my_generator():
+    for i in range(20):
+        yield i
+gen = my_generator()
+print(next(gen))    # returns iteration wise, saves memory, for large datasets
+print(next(gen))
+print(next(gen))
+# for j in gen:
+#     print(j)"""
+
+# 67. (***IMP) Function Caching in Python :
+# Used for high-computation Functions values are memoized to prevent repeatition of the computation, only use when there are more chances of repeated values
+
+"""import functools
+import time
+
+@functools.lru_cache(maxsize=5)
+def fx(n):
+    time.sleep(2)
+    return n*2
+
+print(fx(10))
+print("Done for 10")
+print(fx(20))
+print("Done for 20")
+print(fx(30))
+print("Done for 30")
+print(fx(10))       # Due to lru cache the next replica values stored will print immediately
+print("Done for 10")
+print(fx(20))
+print("Done for 20")
+print(fx(30))
+print(fx(31))
+print("Done for 31")"""
+
+# Exercise 11. Drink Water Reminder:
+
+# 68. Regular Expressions in Python 
+
+# 69. AsyncIO in Python:
+
+# 70. Multi-Threading in Python:
+
+# 71. Multi-Processing in Python:
+
+
+
 
 
 
