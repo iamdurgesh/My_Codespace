@@ -1377,13 +1377,13 @@ print(D4.mro())"""
 #Solution
 """import win32com.client
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
-names = ["Ronnie", "Sam", "Donald"]
+names = ["Ronnie", "Sam", "Donald", "Sassy"]
 for name in names:
-    speaker.Speak(f"ShotOut for {names}")
-names()"""
+    speaker.Speak(f"ShotOut for {name}")
+print(name)"""
     
 #61 Time Module in Python:
-import time
+# import time
 
 """def usingWhile():
     i = 0
@@ -1487,8 +1487,45 @@ import os
 # os.remove("Newname.jpg") # as shutil can't delete the files, only folder using rmtree, use os module for this"""
 
 #65 Request Module in python:
+#This library enables to send HTTP request in PYTHON, and enables to interact with APIs and web services
+# import requests   #UNCOMMENT THIS!
 
+"""# Ex.1
+response = requests.get("https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwiiz4_26-KGAxXUQfEDHcBrBMEQPAgJ")
+print(response.text)"""
 
+#Ex.2 ( make a post request and print response)
+"""url = "https://jsonplaceholder.typicode.com/posts"
+data = {
+    "Title": "Post Request",
+    "body" : "this is the body of the post Request",
+    "userId": "2312",
+}
+headers = {
+    'Content-type': 'application/json; charset=UTF-8',
+}
+response = requests.post(url, headers=headers, json=data)
+print(response.text)"""
+
+#Ex.3 
+"""from bs4 import BeautifulSoup
+url = "https://www.volkswagen.co.in/en.html"
+r = requests.get(url)
+# print(r.text)
+soup = BeautifulSoup(r.text, 'html.parser')     # used to parse html templates and get specific content and get all h2 tags
+for heading in soup.find_all("h2"):
+    # print(soup.prettify)
+    print(heading.text)
+    
+a = soup.title
+print(a)
+
+p = soup.p
+print(p)
+
+for link in soup.find_all('a'): # To get all the URLs within a page with <a> TAGS
+    print(link.get('href'))"""
+    
 #66 Generators in Python
 
 
