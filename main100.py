@@ -1547,6 +1547,42 @@ print(next(gen))
 # for j in gen:
 #     print(j)"""
 
+# 67. (***IMP) Function Caching in Python :
+# Used for high-computation Functions values are memoized to prevent repeatition of the computation, only use when there are more chances of repeated values
+
+"""import functools
+import time
+
+@functools.lru_cache(maxsize=5)
+def fx(n):
+    time.sleep(2)
+    return n*2
+
+print(fx(10))
+print("Done for 10")
+print(fx(20))
+print("Done for 20")
+print(fx(30))
+print("Done for 30")
+print(fx(10))       # Due to lru cache the next replica values stored will print immediately
+print("Done for 10")
+print(fx(20))
+print("Done for 20")
+print(fx(30))
+print(fx(31))
+print("Done for 31")"""
+
+# Exercise 11. Drink Water Reminder:
+
+# 68. Regular Expressions in Python 
+
+# 69. AsyncIO in Python:
+
+# 70. Multi-Threading in Python:
+
+# 71. Multi-Processing in Python:
+
+
 
 
 
