@@ -1578,11 +1578,11 @@ print("Done for 31")"""
 # 68. Regular Expressions in Python:
 # Used while working with strings and text data, to find patterns in huge data
 
-import re
+"""import re
 
 pattern = ""
 pattern = r"[A-Z]+yclone"
-text = """Hello World, Ryclone is the synonym of cyclone """
+text = "Hello World, Ryclone is the synonym of cyclone "
 
 match = re.search(pattern, text)
 print(match)
@@ -1592,15 +1592,132 @@ if match:
 matches = re.finditer(pattern, text)
 for match in matches:
     print(match.span())
-    print(text[match.span()[0]:match.span()[2]])
+    print(text[match.span()[0]:match.span()[2]])"""
     
     
 # 69. AsyncIO in Python:
+#It is a programming pattern which allows high performance I/O operations in a concurrent and non-blocking manner. can be done using asyncio
+
+# import time
+# import asyncio
+# import requests
+
+# Blocking conventional code 
+"""def function1():
+    time.sleep(3)
+    print("func1")
+
+def function2():
+    time.sleep(3)
+    print("func2")
+
+def function3():
+    time.sleep(3)
+    print("func3")
+
+function1()
+function2()
+function3()"""
+
+# Non-blocking asynchronous function
+"""async def function1():
+    # await asyncio.sleep(1)
+    print("func1")
+    url = 'https://c4.wallpaperflare.com/wallpaper/764/505/66/baby-groot-4k-hd-superheroes-wallpaper-preview.jpg'
+    r = requests.get(url, allow_redirects=True)
+    open('icon1', 'wb').write(r.content)
+    return "AsyncFunction"
 
 
-# 70. Multi-Threading in Python:
+async def function2():
+    # await asyncio.sleep(1)
+    print("func2")
+    url = 'https://c4.wallpaperflare.com/wallpaper/297/288/1009/5bd320d590bcf-wallpaper-preview.jpg'
+    r = requests.get(url, allow_redirects=True)
+    open('icon2', 'wb').write(r.content)
 
+async def function3():
+    # await asyncio.sleep(1)
+    print("func3")
+    url = 'https://c4.wallpaperflare.com/wallpaper/47/95/705/anonymus-hacker-computer-mask-wallpaper-preview.jpg'
+    r = requests.get(url, allow_redirects=True)
+    open('icon3', 'wb').write(r.content)
+    
+# async def main():
+#     task = asyncio.create_task(function1())
+#     # await function1()
+#     await function2()
+#     await function3()
+#Method 2 to schedule task concurrently
+async def main():
+    # await function1(),      #To run synchronously
+    # await function2(),
+    # await function3(),
+    # return 1
+    L = await asyncio.gather(         #To run asynchronously             
+        function1(),
+        function2(),
+        function3(),
+        )   
+    print(L)
+asyncio.run(main())"""
 
+# 70. ***Imp Multi-Threading in Python:
+
+"""import threading
+import time
+from concurrent.futures import ThreadPoolExecutor
+
+# Indicates some task being done
+def func(seconds):
+    print(f"Sleeping for {seconds} seconds")
+    time.sleep(seconds)
+    return seconds
+
+# #Normal code
+# time1 = time.perf_counter()     #To calculate time difference
+# func(3)
+# func(2)
+# func(1)
+# time2 = time.perf_counter()
+# print(time2-time1)
+
+#Using threads
+time1 = time.perf_counter()
+t1 = threading.Thread(target=func, args=[3])
+t2 = threading.Thread(target=func, args=[2])
+t3 = threading.Thread(target=func, args=[1])
+t1.start()  # Without using the join function, the time will be very small as the per-counter time is the time of starting each tasks only
+t2.start()
+t3.start()
+
+t1.join()
+t2.join()
+t3.join()       #after using this join method, now the perf_counter output will give the complete time till end of computation
+
+#Calculating Time Difference
+time2 = time.perf_counter()
+print(time2-time1)
+
+# M1 ***Imp Using concurrent.futures
+def poolingDemo1():
+    with ThreadPoolExecutor() as executor:
+        future1 = executor.submit(func,3)
+        future2 = executor.submit(func,2)
+        future3 = executor.submit(func,1)
+        print(future1.result())
+        print(future2.result())
+        print(future3.result())
+poolingDemo1()
+
+# M2 Using map function for scheduling in a better way
+def poolingDemo2():
+    with ThreadPoolExecutor() as executor:
+        l = [3,2,1,4]
+        results = executor.map(func, l)
+        for result in results:
+            print(result)
+poolingDemo2()"""
 # 71. Multi-Processing in Python:
 
 
