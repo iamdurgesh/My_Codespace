@@ -1574,11 +1574,32 @@ print("Done for 31")"""
 
 # Exercise 11. Drink Water Reminder:
 
-# 68. Regular Expressions in Python 
 
+# 68. Regular Expressions in Python:
+# Used while working with strings and text data, to find patterns in huge data
+
+import re
+
+pattern = ""
+pattern = r"[A-Z]+yclone"
+text = """Hello World, Ryclone is the synonym of cyclone """
+
+match = re.search(pattern, text)
+print(match)
+if match:
+    print()
+
+matches = re.finditer(pattern, text)
+for match in matches:
+    print(match.span())
+    print(text[match.span()[0]:match.span()[2]])
+    
+    
 # 69. AsyncIO in Python:
 
+
 # 70. Multi-Threading in Python:
+
 
 # 71. Multi-Processing in Python:
 
