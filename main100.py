@@ -1598,9 +1598,9 @@ for match in matches:
 # 69. AsyncIO in Python:
 #It is a programming pattern which allows high performance I/O operations in a concurrent and non-blocking manner. can be done using asyncio
 
-import time
-import asyncio
-import requests
+# import time
+# import asyncio
+# import requests
 
 # Blocking conventional code 
 """def function1():
@@ -1662,10 +1662,62 @@ async def main():
     print(L)
 asyncio.run(main())"""
 
+# 70. ***Imp Multi-Threading in Python:
 
-# 70. Multi-Threading in Python:
+"""import threading
+import time
+from concurrent.futures import ThreadPoolExecutor
 
+# Indicates some task being done
+def func(seconds):
+    print(f"Sleeping for {seconds} seconds")
+    time.sleep(seconds)
+    return seconds
 
+# #Normal code
+# time1 = time.perf_counter()     #To calculate time difference
+# func(3)
+# func(2)
+# func(1)
+# time2 = time.perf_counter()
+# print(time2-time1)
+
+#Using threads
+time1 = time.perf_counter()
+t1 = threading.Thread(target=func, args=[3])
+t2 = threading.Thread(target=func, args=[2])
+t3 = threading.Thread(target=func, args=[1])
+t1.start()  # Without using the join function, the time will be very small as the per-counter time is the time of starting each tasks only
+t2.start()
+t3.start()
+
+t1.join()
+t2.join()
+t3.join()       #after using this join method, now the perf_counter output will give the complete time till end of computation
+
+#Calculating Time Difference
+time2 = time.perf_counter()
+print(time2-time1)
+
+# M1 ***Imp Using concurrent.futures
+def poolingDemo1():
+    with ThreadPoolExecutor() as executor:
+        future1 = executor.submit(func,3)
+        future2 = executor.submit(func,2)
+        future3 = executor.submit(func,1)
+        print(future1.result())
+        print(future2.result())
+        print(future3.result())
+poolingDemo1()
+
+# M2 Using map function for scheduling in a better way
+def poolingDemo2():
+    with ThreadPoolExecutor() as executor:
+        l = [3,2,1,4]
+        results = executor.map(func, l)
+        for result in results:
+            print(result)
+poolingDemo2()"""
 # 71. Multi-Processing in Python:
 
 
