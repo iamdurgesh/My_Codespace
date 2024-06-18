@@ -1578,7 +1578,7 @@ print("Done for 31")"""
 # 68. Regular Expressions in Python:
 # Used while working with strings and text data, to find patterns in huge data
 
-import re
+"""import re
 
 pattern = ""
 pattern = r"[A-Z]+yclone"
@@ -1592,7 +1592,7 @@ if match:
 matches = re.finditer(pattern, text)
 for match in matches:
     print(match.span())
-    print(text[match.span()[0]:match.span()[2]])
+    print(text[match.span()[0]:match.span()[2]])"""
     
     
 # 69. AsyncIO in Python:
