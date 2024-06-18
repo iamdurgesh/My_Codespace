@@ -1582,7 +1582,7 @@ print("Done for 31")"""
 
 pattern = ""
 pattern = r"[A-Z]+yclone"
-text = """Hello World, Ryclone is the synonym of cyclone """
+text = "Hello World, Ryclone is the synonym of cyclone "
 
 match = re.search(pattern, text)
 print(match)
@@ -1596,6 +1596,71 @@ for match in matches:
     
     
 # 69. AsyncIO in Python:
+#It is a programming pattern which allows high performance I/O operations in a concurrent and non-blocking manner. can be done using asyncio
+
+import time
+import asyncio
+import requests
+
+# Blocking conventional code 
+"""def function1():
+    time.sleep(3)
+    print("func1")
+
+def function2():
+    time.sleep(3)
+    print("func2")
+
+def function3():
+    time.sleep(3)
+    print("func3")
+
+function1()
+function2()
+function3()"""
+
+# Non-blocking asynchronous function
+"""async def function1():
+    # await asyncio.sleep(1)
+    print("func1")
+    url = 'https://c4.wallpaperflare.com/wallpaper/764/505/66/baby-groot-4k-hd-superheroes-wallpaper-preview.jpg'
+    r = requests.get(url, allow_redirects=True)
+    open('icon1', 'wb').write(r.content)
+    return "AsyncFunction"
+
+
+async def function2():
+    # await asyncio.sleep(1)
+    print("func2")
+    url = 'https://c4.wallpaperflare.com/wallpaper/297/288/1009/5bd320d590bcf-wallpaper-preview.jpg'
+    r = requests.get(url, allow_redirects=True)
+    open('icon2', 'wb').write(r.content)
+
+async def function3():
+    # await asyncio.sleep(1)
+    print("func3")
+    url = 'https://c4.wallpaperflare.com/wallpaper/47/95/705/anonymus-hacker-computer-mask-wallpaper-preview.jpg'
+    r = requests.get(url, allow_redirects=True)
+    open('icon3', 'wb').write(r.content)
+    
+# async def main():
+#     task = asyncio.create_task(function1())
+#     # await function1()
+#     await function2()
+#     await function3()
+#Method 2 to schedule task concurrently
+async def main():
+    # await function1(),      #To run synchronously
+    # await function2(),
+    # await function3(),
+    # return 1
+    L = await asyncio.gather(         #To run asynchronously             
+        function1(),
+        function2(),
+        function3(),
+        )   
+    print(L)
+asyncio.run(main())"""
 
 
 # 70. Multi-Threading in Python:
