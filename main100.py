@@ -1720,6 +1720,7 @@ def poolingDemo2():
 poolingDemo2()"""
 
 # 71. Multi-Processing in Python:
+"""import concurrent.futures
 import multiprocessing
 import requests
 # import os
@@ -1732,21 +1733,28 @@ def download_file(url, name):
     print(f"Finished Downloading {name}")
     
     
-if __name__ == "__main__":          # Use this script when using the script directly in terminal
-    url = "https://picsum.photos/2000/3000"
-    # download_file(url, "check")
-    pros = []
-    for i in range(20):
-        download_file(url, i)
-        p = multiprocessing.Process(target = download_file, args = [url, i])
-        p.start()
-        pros.append(p)
+# if __name__ == "__main__":          # Use this script when using the script directly in terminal
+#     url = "https://picsum.photos/2000/3000"
+    # download_file(url, "check")        # For Sequential Download
+    # pros = []
+    # for i in range(20):
+    #     download_file(url, i)
+    #     p = multiprocessing.Process(target = download_file, args = [url, i])
+    #     p.start()
+    #     pros.append(p)
 
-    for p in pros:
-        p.join()
+    # for p in pros:
+    #     p.join()
 
 # just like ThreadPullExecutor(), here we have ProcessPoolExecutor for multiprocessingg in Python
-
+if __name__ == '__main__':
+    url = "https://picsum.photos/2000/3000"
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+        l1 = [url for i in range(50)]
+        l2 = [i for i in range(60)]
+        results = executor.map(download_file, l1, l2)
+        for r in results:
+            print(r)"""
 
 
 
