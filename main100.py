@@ -1718,11 +1718,34 @@ def poolingDemo2():
         for result in results:
             print(result)
 poolingDemo2()"""
+
 # 71. Multi-Processing in Python:
+import multiprocessing
+import requests
+# import os
 
+# os.mkdir("testImg_Multiprocessing")
+def download_file(url, name):
+    print(f"Started Dowloafing {name}")
+    response = requests.get(url)
+    open(f"testImg_Multiprocessing/file{name}.jpg", "wb").write(response.content)
+    print(f"Finished Downloading {name}")
+    
+    
+if __name__ == "__main__":          # Use this script when using the script directly in terminal
+    url = "https://picsum.photos/2000/3000"
+    # download_file(url, "check")
+    pros = []
+    for i in range(20):
+        download_file(url, i)
+        p = multiprocessing.Process(target = download_file, args = [url, i])
+        p.start()
+        pros.append(p)
 
+    for p in pros:
+        p.join()
 
-
+# just like ThreadPullExecutor(), here we have ProcessPoolExecutor for multiprocessingg in Python
 
 
 
