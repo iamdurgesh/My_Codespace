@@ -1572,7 +1572,23 @@ print(fx(30))
 print(fx(31))
 print("Done for 31")"""
 
-# Exercise 11. Drink Water Reminder:
+# Exercise 11. Drink Water Reminder: Drink Water Reminder
+# Write a python program which reminds you of drinking water every hour or two. Your Program can either beep or send desktop notifications for a specific operating system
+
+# Method 1
+# import asyncio
+# from desktop_notifier import DesktopNotifier
+
+# notifier = DesktopNotifier()
+# notifier.send_sync(title="Hello Buddy Paani pee le jaake", message="Sent from Python")
+
+# Method 2      (For MAC-OS)
+# import os
+# repeat_interval = 10 # Repeat frequency in seconds
+# while True:
+#     command = "osascript -e \'say \"Hello Buddy Paani peele jake\"\'; osascript -e \'display alert \"Hey buddy, Drink Water\"\'"
+#     os.system(command)  
+#     time.sleep(repeat_interval)
 
 
 # 68. Regular Expressions in Python:
