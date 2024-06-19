@@ -1572,16 +1572,34 @@ print(fx(30))
 print(fx(31))
 print("Done for 31")"""
 
-# Exercise 11. Drink Water Reminder:
+# Exercise 11. Drink Water Reminder: Drink Water Reminder
+# Write a python program which reminds you of drinking water every hour or two. Your Program can either beep or send desktop notifications for a specific operating system
+
+# Method 1
+# import asyncio
+# from desktop_notifier import DesktopNotifier
+
+# notifier = DesktopNotifier()
+# notifier.send_sync(title="Hello Buddy Paani pee le jaake", message="Sent from Python")
+
+# Method 2      (For MAC-OS)
+# import os
+# repeat_interval = 10 # Repeat frequency in seconds
+# while True:
+#     command = "osascript -e \'say \"Hello Buddy Paani peele jake\"\'; osascript -e \'display alert \"Hey buddy, Drink Water\"\'"
+#     os.system(command)  
+#     time.sleep(repeat_interval)
 
 
 # 68. Regular Expressions in Python:
 # Used while working with strings and text data, to find patterns in huge data
 
 """import re
+"""import re
 
 pattern = ""
 pattern = r"[A-Z]+yclone"
+text = "Hello World, Ryclone is the synonym of cyclone "
 text = "Hello World, Ryclone is the synonym of cyclone "
 
 match = re.search(pattern, text)
@@ -1593,9 +1611,77 @@ matches = re.finditer(pattern, text)
 for match in matches:
     print(match.span())
     print(text[match.span()[0]:match.span()[2]])"""
+    print(text[match.span()[0]:match.span()[2]])"""
     
     
 # 69. AsyncIO in Python:
+#It is a programming pattern which allows high performance I/O operations in a concurrent and non-blocking manner. can be done using asyncio
+
+# import time
+# import asyncio
+# import requests
+
+# Blocking conventional code 
+"""def function1():
+    time.sleep(3)
+    print("func1")
+
+def function2():
+    time.sleep(3)
+    print("func2")
+
+def function3():
+    time.sleep(3)
+    print("func3")
+
+function1()
+function2()
+function3()"""
+
+# Non-blocking asynchronous function
+"""async def function1():
+    # await asyncio.sleep(1)
+    print("func1")
+    url = 'https://c4.wallpaperflare.com/wallpaper/764/505/66/baby-groot-4k-hd-superheroes-wallpaper-preview.jpg'
+    r = requests.get(url, allow_redirects=True)
+    open('icon1', 'wb').write(r.content)
+    return "AsyncFunction"
+
+
+async def function2():
+    # await asyncio.sleep(1)
+    print("func2")
+    url = 'https://c4.wallpaperflare.com/wallpaper/297/288/1009/5bd320d590bcf-wallpaper-preview.jpg'
+    r = requests.get(url, allow_redirects=True)
+    open('icon2', 'wb').write(r.content)
+
+async def function3():
+    # await asyncio.sleep(1)
+    print("func3")
+    url = 'https://c4.wallpaperflare.com/wallpaper/47/95/705/anonymus-hacker-computer-mask-wallpaper-preview.jpg'
+    r = requests.get(url, allow_redirects=True)
+    open('icon3', 'wb').write(r.content)
+    
+# async def main():
+#     task = asyncio.create_task(function1())
+#     # await function1()
+#     await function2()
+#     await function3()
+#Method 2 to schedule task concurrently
+async def main():
+    # await function1(),      #To run synchronously
+    # await function2(),
+    # await function3(),
+    # return 1
+    L = await asyncio.gather(         #To run asynchronously             
+        function1(),
+        function2(),
+        function3(),
+        )   
+    print(L)
+asyncio.run(main())"""
+
+# 70. ***Imp Multi-Threading in Python:
 #It is a programming pattern which allows high performance I/O operations in a concurrent and non-blocking manner. can be done using asyncio
 
 # import time
@@ -1718,12 +1804,43 @@ def poolingDemo2():
         for result in results:
             print(result)
 poolingDemo2()"""
+
 # 71. Multi-Processing in Python:
+"""import concurrent.futures
+import multiprocessing
+import requests
+# import os
 
+# os.mkdir("testImg_Multiprocessing")
+def download_file(url, name):
+    print(f"Started Dowloafing {name}")
+    response = requests.get(url)
+    open(f"testImg_Multiprocessing/file{name}.jpg", "wb").write(response.content)
+    print(f"Finished Downloading {name}")
+    
+    
+# if __name__ == "__main__":          # Use this script when using the script directly in terminal
+#     url = "https://picsum.photos/2000/3000"
+    # download_file(url, "check")        # For Sequential Download
+    # pros = []
+    # for i in range(20):
+    #     download_file(url, i)
+    #     p = multiprocessing.Process(target = download_file, args = [url, i])
+    #     p.start()
+    #     pros.append(p)
 
+    # for p in pros:
+    #     p.join()
 
-
-
+# just like ThreadPullExecutor(), here we have ProcessPoolExecutor for multiprocessingg in Python
+if __name__ == '__main__':
+    url = "https://picsum.photos/2000/3000"
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+        l1 = [url for i in range(50)]
+        l2 = [i for i in range(60)]
+        results = executor.map(download_file, l1, l2)
+        for r in results:
+            print(r)"""
 
 
 
