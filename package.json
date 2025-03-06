@@ -1,0 +1,25 @@
+{
+  "name": "my_codespace",
+  "version": "1.0.0",
+  "description": "for regular Hand's on practice 100 Days code challenge (python) Typescript Hands on Practice (100days)",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamdurgesh/My_Codespace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamdurgesh/My_Codespace/issues"
+  },
+  "homepage": "https://github.com/iamdurgesh/My_Codespace#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
